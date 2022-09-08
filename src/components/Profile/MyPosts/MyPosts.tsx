@@ -11,7 +11,8 @@ export const MyPosts = () => {
                 <button> Add Post</button>
             </div>
             <div className={s.item}>
-                <Post/>
+                <Post message= 'Hi! How are you?'/>
+                <Post message= "It's my first post"/>
             </div>
         </div>
     );
