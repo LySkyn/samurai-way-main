@@ -7,9 +7,6 @@ import {Dialogs} from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
 
 function App() {
-    let News;
-    let Music;
-    let Settings;
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
@@ -18,9 +15,9 @@ function App() {
                 <div className='app-wrapper-content'>
                     <Route path='/dialogs' component={Dialogs}/>
                     <Route path='/profile' component={Profile}/>
-                    <Route path='/news' component={News}/>
-                    <Route path='/music' component={Music}/>
-                    <Route path='/settings' component={Settings}/>
+                    <Route path='/news' render={() => "News"}/>
+                    <Route path='/music' render={() => "Music"}/>
+                    <Route path='/settings' render={() => "Settings"}/>
                 </div>
             </div>
         </BrowserRouter>
