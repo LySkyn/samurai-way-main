@@ -6,17 +6,20 @@ import {Profile} from "./components/Profile/Profile"
 import {Dialogs} from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route} from "react-router-dom";
 
-function App() {
+function App(props: {
+    dialogsData: any[];
+    messages: any[];
+    posts: any[]
+}) {
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
                 <Navbar/>
                 <div className='app-wrapper-content'>
-                    {/*<Route path='/dialogs' component={Dialogs}/>*/}
-                    {/*<Route path='/profile' component={Profile}/>*/}
-                    <Route path='/dialogs' render={() => <Dialogs/>}/>
-                    <Route path='/profile' render={() => <Profile/>}/>
+                    <Route path='/dialogs'
+                           render={() => <Dialogs messages={props.messages} dialogsData={props.dialogsData}/>}/>
+                    <Route path='/profile' render={() => <Profile posts={props.posts}/>}/>
                     <Route path='/news' render={() => "News"}/>
                     <Route path='/music' render={() => "Music"}/>
                     <Route path='/settings' render={() => "Settings"}/>
