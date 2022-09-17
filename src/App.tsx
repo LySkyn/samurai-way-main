@@ -8,7 +8,6 @@ import {BrowserRouter, Route} from "react-router-dom";
 
 function App(props: { appState: { dialogsPage: { messages: any[]; dialogs: any[]; }; profilePage: { posts: any[]; }; }; }) {
     return (
-        <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
                 <Navbar/>
@@ -21,7 +20,6 @@ function App(props: { appState: { dialogsPage: { messages: any[]; dialogs: any[]
                     <Route path='/settings' render={() => "Settings"}/>
                 </div>
             </div>
-        </BrowserRouter>
     )
         ;
 }
